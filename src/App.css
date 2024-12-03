@@ -1,0 +1,14 @@
+.active {
+  color: red;
+}
+footer svg {
+  color: red;
+  font-size: 30px;
+}
+footer p {
+  display: flex;
+  gap: 5px;
+}
+footer * {
+  background: transparent;
+}
