@@ -36,7 +36,13 @@ export default function SwiperCategory() {
   };
 
   const movieList = MOVIE__LIST.map((item) => (
-    <button onClick={() => handleChangeType(item.path)} key={item.id}>
+    <button
+      key={item.id}
+      className={`py-4 px-8 bg-[#111111] rounded-xl ${
+        item.path === type ? "text-white bg-red-800 " : ""
+      }`}
+      onClick={() => handleChangeType(item.path)}
+    >
       {item.title}
     </button>
   ));
@@ -48,7 +54,7 @@ export default function SwiperCategory() {
 
   return (
     <>
-      <div className="text-red-800">{movieList}</div>
+      <div className="text-red-800 flex justify-center gap-3">{movieList}</div>
       <Swiper
         modules={[Virtual, Navigation, Pagination]}
         onSwiper={setSwiperRef}
@@ -66,14 +72,6 @@ export default function SwiperCategory() {
             key={movie.id || index}
             className="relative"
             style={{
-              backgroundImage: `url(${
-                movie.backdrop_path
-                  ? import.meta.env.VITE_IMAGE_URL + movie.backdrop_path
-                  : "path/to/default-image.jpg"
-              })`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
               display: "flex",
               flexDirection: "column",
               justifyContent: "end",
@@ -81,10 +79,15 @@ export default function SwiperCategory() {
             }}
           >
             <img
-              className="absolute w-full h-full z-0"
-              src={import.meta.env.VITE_IMAGE_URL + movie.poster_path}
+              className="absolute w-full h-4/5 z-0 object-contain"
+              src={import.meta.env.VITE_IMAGE_URL + movie.backdrop_path}
               alt=""
             />
+            <div className=" group z-10 bg-transparent flex flex-col justify-end h-full pb-8 cursor-pointer w-full px-3 duration-500">
+              <h1 className="inline-block z-10 bg-white font-extrabold text-red-800 py-2  px-9 rounded-xl opacity-0 group-hover:opacity-100 ">
+                {movie.title}
+              </h1>
+            </div>
           </SwiperSlide>
         ))}
       </Swiper>

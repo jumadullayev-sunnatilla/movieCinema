@@ -1,6 +1,6 @@
 .swiper {
   width: 100%;
-  height: 500px;
+  height: 1000px;
 }
 
 .swiper-slide {
@@ -12,6 +12,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100%;
 }
 
 .swiper-slide img {
@@ -23,7 +24,7 @@
 
 .swiper {
   width: 100%;
-  height: 300px;
+  height: 1000px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -34,8 +35,8 @@
 }
 
 .mySwiper2 {
-  height: 500px;
-  width: 100%;
+  height: 1000px;
+  width: 900%;
 }
 
 .mySwiper {
@@ -44,10 +45,9 @@
   justify-content: center;
   align-items: center;
   width: 80%;
-  height: 100px;
+  height: 1000px;
   box-sizing: border-box;
-  padding: 10px 0;
-  margin-bottom: 60px;
+  padding: 10px 0px;
 }
 
 .mySwiper .swiper-slide {
@@ -73,7 +73,7 @@
 }
 .swiper__main {
   width: 100%;
-  height: 100%;
+  height: 1000px;
   background-image: url("https://swiperjs.com/demos/images/nature-1.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -83,3 +83,7 @@
   width: 10px;
   height: 10px;
 } */
+.wiperA {
+  display: block;
+  height: 1000px;
+}

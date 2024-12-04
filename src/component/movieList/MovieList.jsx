@@ -11,16 +11,17 @@ const MovieList = () => {
   };
   const { data } = useGetMovieQuery({ type, params: { page } });
   const popularList = data?.results?.map((movie) => (
-    <div
-      className="w-[300px]  border-2 border-red-800  flex flex-col gap-3"
-      key={movie.id}
-    >
+    <div className="w-[280px]     flex flex-col gap-3" key={movie.id}>
       <img
-        className="w-full h-2/3 object-cover "
+        className="w-full  object-cover h-[400px] rounded-xl "
         src={import.meta.env.VITE_IMAGE_URL + movie.poster_path}
         alt=""
       />
-      <h1 className="text-xs">{movie.title}</h1>
+      <div className="px-2">
+        <h1 className="text-2xl text-white font-semibold">
+          {movie.title} {movie.original_language.toString().toLocaleUpperCase()}
+        </h1>
+      </div>
     </div>
   ));
   const handleChangeType = (id) => {
@@ -28,7 +29,13 @@ const MovieList = () => {
     setPage(1);
   };
   const movieList = MOVIE__LIST.map((item) => (
-    <button onClick={() => handleChangeType(item.path)} key={item.id}>
+    <button
+      className={`py-4 px-8 bg-[#111111] rounded-xl ${
+        item.path === type ? "text-white bg-red-800 " : ""
+      }`}
+      onClick={() => handleChangeType(item.path)}
+      key={item.id}
+    >
       {item.title}
     </button>
   ));
@@ -38,7 +45,10 @@ const MovieList = () => {
       <ul className="flex gap-7 justify-center text-white text-lg my-5">
         {movieList}
       </ul>
-      <div className="text-red-800 flex flex-wrap gap-2">{popularList}</div>;
+      <div className="text-red-800 flex flex-wrap gap-2 gap-y-5">
+        {popularList}
+      </div>
+      ;
       <div className="flex justify-center pt-6 pb-30px">
         <Stack spacing={1}>
           <Pagination

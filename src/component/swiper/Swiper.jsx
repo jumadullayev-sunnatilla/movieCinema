@@ -34,7 +34,7 @@ export default function App() {
         justifyContent: "end",
         paddingBottom: "20px",
       }}
-      className="h-64 w-full"
+      className="h-64 w-full swiperSlide"
     >
       <div className="bg-transparent text-white w-96 flex flex-col items-center">
         <h1 className="text-white text-3xl font-bold bg-transparent">
@@ -72,7 +72,7 @@ export default function App() {
         navigation={true}
         thumbs={{ swiper: thumbsSwiper }}
         modules={[FreeMode, Navigation, Thumbs]}
-        className="mySwiper2"
+        className="h-[6000px]"
       >
         {swiperSlide}
       </Swiper>
