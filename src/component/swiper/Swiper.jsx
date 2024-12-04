@@ -17,7 +17,7 @@ import { useGetMovieQuery } from "../../redux/api/movie-api";
 
 export default function App() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
-  const { data } = useGetMovieQuery();
+  const { data } = useGetMovieQuery({ type: "now_playing" });
   console.log(data?.results);
   const swiperSlide = data?.results?.map((movie) => (
     <SwiperSlide

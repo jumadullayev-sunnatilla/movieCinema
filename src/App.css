@@ -9,6 +9,3 @@ footer p {
   display: flex;
   gap: 5px;
 }
-footer * {
-  background: transparent;
-}
