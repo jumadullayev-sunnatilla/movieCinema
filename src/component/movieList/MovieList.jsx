@@ -3,6 +3,7 @@ import { useGetMovieQuery } from "../../redux/api/movie-api";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 import { MOVIE__LIST } from "../../static";
+import Movie from "../Movie/Movie";
 const MovieList = () => {
   const [type, setType] = useState("now_playing");
   const [page, setPage] = useState(1);
@@ -10,20 +11,7 @@ const MovieList = () => {
     setPage(value);
   };
   const { data } = useGetMovieQuery({ type, params: { page } });
-  const popularList = data?.results?.map((movie) => (
-    <div className="w-[280px]     flex flex-col gap-3" key={movie.id}>
-      <img
-        className="w-full  object-cover h-[400px] rounded-xl "
-        src={import.meta.env.VITE_IMAGE_URL + movie.poster_path}
-        alt=""
-      />
-      <div className="px-2">
-        <h1 className="text-2xl text-white font-semibold">
-          {movie.title} {movie.original_language.toString().toLocaleUpperCase()}
-        </h1>
-      </div>
-    </div>
-  ));
+
   const handleChangeType = (id) => {
     setType(id);
     setPage(1);
@@ -45,10 +33,8 @@ const MovieList = () => {
       <ul className="flex gap-7 justify-center text-white text-lg my-5">
         {movieList}
       </ul>
-      <div className="text-red-800 flex flex-wrap gap-2 gap-y-5">
-        {popularList}
-      </div>
-      ;
+      <Movie data={data?.results} />
+
       <div className="flex justify-center pt-6 pb-30px">
         <Stack spacing={1}>
           <Pagination

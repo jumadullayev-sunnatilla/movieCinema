@@ -10,6 +10,7 @@ import Category from "../pages/home/category/Category";
 import TopCategory from "../component/topCategory/TopCategory";
 import Ganr from "../component/ganr/Ganr";
 import SwiperCategory from "../component/swiperCategory/SwiperCategory";
+import Detail from "../pages/detail/Detail";
 
 const Router = () => {
   return (
@@ -26,6 +27,7 @@ const Router = () => {
           <Route path="/afisha" element={<Afisha />} />
           <Route path="/search" element={<Search />} />
           <Route path="/ticket" element={<Ticket />} />
+          <Route path="/movie/:id" element={<Detail />} />
         </Route>
       </Routes>
     </>
