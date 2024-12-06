@@ -15,7 +15,7 @@ import "./Swiper.css";
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 import { useGetMovieQuery } from "../../redux/api/movie-api";
 
-export default function App() {
+export default function Swipers() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const { data } = useGetMovieQuery({ type: "now_playing" });
   console.log(data?.results);

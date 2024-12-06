@@ -1,6 +1,7 @@
 import React from "react";
 import { BILET__MONTH, CINEMATICA } from "../../static";
 import { RiVipCrown2Fill } from "react-icons/ri";
+import Swipers from "../swiper/Swiper";
 
 const Bilet = () => {
   console.log(BILET__MONTH);
@@ -54,6 +55,7 @@ const Bilet = () => {
 
   return (
     <div className="container mx-auto ">
+      <Swipers />
       <div className="flex justify-between">
         <div className="text-white">
           <h1>March</h1>
