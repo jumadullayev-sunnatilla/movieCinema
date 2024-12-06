@@ -1,5 +1,5 @@
 import React from "react";
-import Category from "../home/category/Category";
+import Category from "../../component/category/Category";
 
 const Seans = () => {
   return (

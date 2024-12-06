@@ -30,8 +30,8 @@ const Ganr = () => {
     <button
       onClick={() => handleChangeGenre(genre.id)}
       className={`${
-        selectedGenre.includes(genre.id) ? "bg-red-500 text-white" : ""
-      } px-3 py-1 border rounded`}
+        selectedGenre.includes(genre.id) ? "bg-red-800 text-white" : ""
+      } px-4 py-1  rounded-xl`}
       key={genre.id}
     >
       {genre.name}

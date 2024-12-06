@@ -9,3 +9,20 @@ footer p {
   display: flex;
   gap: 5px;
 }
+.category .active {
+  background: #991b1b;
+  color: rgb(255, 255, 255);
+}
+.movie-data svg {
+  color: yellow;
+}
+.search-form svg {
+  color: #991b1b;
+  background: transparent;
+  font-size: 30px;
+}
+.cinema-vip svg {
+  color: #991b1b;
+  background: transparent;
+  font-size: 20px;
+}
