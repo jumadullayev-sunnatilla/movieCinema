@@ -21,18 +21,17 @@ export default function SwiperCategory() {
   const appendNumber = useRef(500);
   const prependNumber = useRef(1);
 
-  // Create array with slides
   const [slides, setSlides] = useState([]);
   console.log(slides);
 
   useEffect(() => {
     if (data?.results) {
-      setSlides(data?.results.slice(0, 20)); // set first 20 movies from API
+      setSlides(data?.results.slice(0, 20));
     }
   }, [data]);
 
   const slideTo = (index) => {
-    swiperRef.slideTo(index - 1, 0); // Adjusted for 1-based index
+    swiperRef.slideTo(index - 1, 0);
   };
 
   const movieList = MOVIE__LIST.map((item) => (
