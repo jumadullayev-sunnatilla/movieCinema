@@ -1,10 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { BILET__MONTH, CINEMATICA } from "../../static";
 import { RiVipCrown2Fill } from "react-icons/ri";
-import Swipers from "../swiper/Swiper";
 
 const Bilet = () => {
-  console.log(BILET__MONTH);
   const ticket__day_march = BILET__MONTH.slice(0, 5).map((item) => {
     return (
       <div
@@ -54,8 +52,7 @@ const Bilet = () => {
   ));
 
   return (
-    <div className="container mx-auto ">
-      <Swipers />
+    <div className="container mx-auto mt-10">
       <div className="flex justify-between">
         <div className="text-white">
           <h1>March</h1>

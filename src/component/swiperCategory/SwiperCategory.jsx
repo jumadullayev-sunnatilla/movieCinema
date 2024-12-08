@@ -11,18 +11,18 @@ import "swiper/css/navigation";
 
 import "./SwiperCategory.css";
 import { useGetMovieQuery } from "../../redux/api/movie-api";
+import { useNavigate } from "react-router-dom";
 
 export default function SwiperCategory() {
+  const navigate = useNavigate();
+
   const [type, setType] = useState("now_playing");
-  const [page, setPage] = useState(1);
+
   const { data } = useGetMovieQuery({ type, params: { page: 1 } });
 
   const [swiperRef, setSwiperRef] = useState(null);
-  const appendNumber = useRef(500);
-  const prependNumber = useRef(1);
 
   const [slides, setSlides] = useState([]);
-  console.log(slides);
 
   useEffect(() => {
     if (data?.results) {
@@ -82,7 +82,10 @@ export default function SwiperCategory() {
               src={import.meta.env.VITE_IMAGE_URL + movie.backdrop_path}
               alt=""
             />
-            <div className=" group z-10 bg-transparent flex flex-col justify-end h-full pb-8 cursor-pointer w-full px-3 duration-500">
+            <div
+              onClick={() => navigate(`/movie/${movie?.id}`)}
+              className=" group z-10 bg-transparent flex flex-col justify-end h-full pb-8 cursor-pointer w-full px-3 duration-500"
+            >
               <h1 className="inline-block z-10 bg-white font-extrabold text-red-800 py-2  px-9 rounded-xl opacity-0 group-hover:opacity-100 ">
                 {movie.title}
               </h1>

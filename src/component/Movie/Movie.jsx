@@ -23,7 +23,7 @@ const Movie = ({ data }) => {
     </div>
   ));
   return (
-    <div className="text-red-800 flex flex-wrap gap-2 gap-y-5">
+    <div className="text-red-800 flex flex-wrap gap-2 gap-y-5 pl-5">
       {popularList}
     </div>
   );

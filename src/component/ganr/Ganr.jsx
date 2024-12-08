@@ -11,7 +11,7 @@ const Ganr = () => {
 
   const { data } = useGetMovieDiscoverQuery({
     with_genres: selectedGenre.join(","),
-    without_genres: "10749,18",
+    without_genres: "",
     page: currentPage,
   });
 

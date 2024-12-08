@@ -64,6 +64,7 @@ body {
 .swiper-button-next,
 .swiper-button-prev {
   color: red;
+  background: transparent;
 }
 .swiper-pagination-fraction {
   background: transparent;

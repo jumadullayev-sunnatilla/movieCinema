@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { useNavigate, useParams } from "react-router-dom";
 import {
@@ -8,16 +8,21 @@ import {
 import { GrPrevious } from "react-icons/gr";
 import { CiSaveDown2 } from "react-icons/ci";
 import { FaPlay, FaShareAlt } from "react-icons/fa";
+import DetailData from "../../component/detailData/DetailData";
+import Bilet from "../../component/bilet/Bilet";
+import DetailImage from "../../component/detailImage/DetailImage";
 
 const Detail = () => {
   const navigate = useNavigate();
+  const [page, setPage] = useState(true);
+
   const { id } = useParams();
   const { data } = useGetDetailQuery(id);
-  const { data: images } = useGetDetailImagesQuery(id);
-  console.log(data);
+  const { data: imagesData, isLoading: isLoadingIamge } =
+    useGetDetailImagesQuery(id);
+
   const handleGoBack = () => {
     navigate(-1);
-    console.log(1);
   };
 
   return (
@@ -50,8 +55,8 @@ const Detail = () => {
             </button>
           </div>
         </div>
-        <div className="bg-transparent text-white w-96 flex flex-col items-center mx-auto">
-          <h1 className="text-white text-3xl font-bold bg-transparent">
+        <div className="bg-transparent text-white w-96 flex flex-col items-center mx-auto gap-y-2">
+          <h1 className="text-white text-3xl font-bold bg-transparent text-center">
             {data?.title}
           </h1>
           <p className="bg-transparent">
@@ -66,6 +71,26 @@ const Detail = () => {
           </button>
         </div>
       </div>
+      <div className="flex items-center  justify-center mt-10 w-[400px] mx-auto">
+        <div
+          className={`text-center py-5 rounded-xl bg-[#111111] text-white  w-[200px] cursor-pointer font-semibold ${
+            page ? "text-red-900 bg-[#2d2d2d] font-extrabold" : ""
+          }`}
+          onClick={() => setPage(true)}
+        >
+          Detail
+        </div>
+        <div
+          className={`text-center  py-5 rounded-xl bg-[#111111] text-white  w-[200px] cursor-pointer font-semibold ${
+            !page ? "text-red-900 bg-[#2d2d2d] font-extrabold" : ""
+          }`}
+          onClick={() => setPage(false)}
+        >
+          Ticket
+        </div>
+      </div>
+      {page ? <DetailData /> : <Bilet />}
+      <DetailImage data={imagesData} loading={isLoadingIamge} />
     </div>
   );
 };
