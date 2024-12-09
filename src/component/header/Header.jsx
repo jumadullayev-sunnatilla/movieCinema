@@ -48,7 +48,7 @@ const Header = () => {
         <div className="flex items-center gap-4">
           <select
             onChange={(e) => i18n.changeLanguage(e.target.value)}
-            className="py-2 px-4 bg-red-800 text-white rounded-xl focus:outline-none"
+            className="py-2 px-4 bg-red-800 text-white rounded-xl "
           >
             <option value="uz">Uz</option>
             <option value="ru">Ru</option>
