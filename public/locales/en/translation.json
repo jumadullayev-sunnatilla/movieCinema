@@ -1,0 +1,39 @@
+{
+  "id": "en",
+  "movie": "Movie",
+  "genres": "Genre",
+  "header": {
+    "afisha": "Schedule",
+    "seans": "Sessions",
+    "ticket": "Tickets",
+    "search": "Search",
+    "sign_in": "Sign In"
+  },
+  "swiper": {
+    "look": "Watch"
+  },
+  "movie_list": {
+    "now_playing": "Now Playing",
+    "popular": "Popular",
+    "top_rated": "Top Rated",
+    "upcoming": "Upcoming"
+  },
+  "search": {
+    "title": "Start searching for movies",
+    "title_move": "Enter movie title in the search bar above.",
+    "error": "ERROR",
+    "error_type": "Movie not found",
+    "go_home": "Go to homepage"
+  },
+  "detail": {
+    "detail": "Detail",
+    "ticket": "Ticket",
+    "duration": "Duration",
+    "premiere": "Premiere",
+    "genres": "Genre",
+    "production": "Production",
+    "age_rating": "Age Rating",
+    "about_movie": "About Movie",
+    "ticket_buy": "Buy Ticket"
+  }
+}

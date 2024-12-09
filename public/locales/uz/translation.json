@@ -1,0 +1,39 @@
+{
+  "id": "uz",
+  "movie": "Film",
+  "genres": "Janr",
+  "header": {
+    "afisha": "Afisha",
+    "seans": "Seans",
+    "ticket": "Bilet",
+    "search": "Qiqirish",
+    "sign_in": "Kirish"
+  },
+  "swiper": {
+    "look": "Tomosha qilish"
+  },
+  "movie_list": {
+    "now_playing": "Hozir tomoshada",
+    "popular": "Mashhur",
+    "top_rated": " Yuqori reyting",
+    "upcoming": "Premyerasi yaqin"
+  },
+  "search": {
+    "title": "Filmlarni qidirishni boshlang",
+    "title_move": "Yuqoridagi qidiruv satriga film nomini kiriting.",
+    "error": "XATO",
+    "error_type": "Film topilmadi",
+    "go_home": "bosh sahifa"
+  },
+  "detail": {
+    "detail": "Film haqida",
+    "ticket": "Bilet",
+    "duration": "Davomiyligi",
+    "premiere": "Premyera",
+    "production": "Davlat",
+    "genres": "Janr",
+    "age_rating": "Yosh reytingi",
+    "about_movie": "Film Haqida",
+    "ticket_buy": "Chipta sotib oling"
+  }
+}

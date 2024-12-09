@@ -5,6 +5,7 @@ import { store } from "./redux";
 import App from "./App.jsx";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
+import "./i18next.js";
 
 createRoot(document.getElementById("root")).render(
   <Provider store={store}>

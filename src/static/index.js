@@ -1,25 +1,31 @@
-export const MOVIE__LIST = [
-  {
-    id: 1,
-    title: "Now Playing",
-    path: "now_playing",
-  },
-  {
-    id: 2,
-    title: "Popular",
-    path: "popular",
-  },
-  {
-    id: 3,
-    title: "Top Rated",
-    path: "top_rated",
-  },
-  {
-    id: 4,
-    title: "Upcoming",
-    path: "upcoming",
-  },
-];
+import { useTranslation } from "react-i18next";
+
+export const useMovieList = () => {
+  const { t } = useTranslation();
+  return [
+    {
+      id: 1,
+      title: t("movie_list.now_playing"),
+      path: "now_playing",
+    },
+    {
+      id: 2,
+      title: t("movie_list.popular"),
+      path: "popular",
+    },
+    {
+      id: 3,
+      title: t("movie_list.top_rated"),
+      path: "top_rated",
+    },
+    {
+      id: 4,
+      title: t("movie_list.upcoming"),
+      path: "upcoming",
+    },
+  ];
+};
+
 export const BILET__MONTH = [
   {
     day: "Pay",

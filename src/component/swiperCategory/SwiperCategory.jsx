@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 // Import Swiper React components
 import { Virtual, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { MOVIE__LIST } from "../../static";
+import { useMovieList } from "../../static";
 
 // Import Swiper styles
 import "swiper/css";
@@ -34,7 +34,7 @@ export default function SwiperCategory() {
     swiperRef.slideTo(index - 1, 0);
   };
 
-  const movieList = MOVIE__LIST.map((item) => (
+  const movieList = useMovieList().map((item) => (
     <button
       key={item.id}
       className={`py-4 px-8 bg-[#111111] rounded-xl ${

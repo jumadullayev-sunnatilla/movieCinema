@@ -4,6 +4,7 @@
 footer svg {
   color: red;
   font-size: 30px;
+  background: transparent;
 }
 footer p {
   display: flex;

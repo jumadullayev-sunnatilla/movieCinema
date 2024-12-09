@@ -4,6 +4,7 @@ import Movie from "../../component/Movie/Movie";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { IoSearch } from "react-icons/io5";
 import Skeleton from "../../component/skeleton/Skeleton";
+import { useTranslation } from "react-i18next";
 
 const Search = () => {
   const navigate = useNavigate();
@@ -29,9 +30,10 @@ const Search = () => {
     setSearch(value);
     setSearchParams({ search: value });
   };
+  const { t, i18n } = useTranslation();
 
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto  mt-28">
       <form
         className="text-white bg-[#111111] flex w-[400px] mx-auto search-form h-16 p-5 items-center gap-3 rounded-xl my-12"
         onSubmit={handleSearchMovie}
@@ -50,11 +52,9 @@ const Search = () => {
       {!search ? (
         <div className="text-center mt-10">
           <h2 className="text-white text-5xl font-semibold">
-            Start searching for movies
+            {t("search.title")}
           </h2>
-          <p className="text-gray-400 mt-2">
-            Type the name of a movie in the search bar above.
-          </p>
+          <p className="text-gray-400 mt-2">{t("search.title_move")}</p>
         </div>
       ) : isLoading ? (
         <div className="grid grid-cols-3 gap-5">
@@ -62,9 +62,12 @@ const Search = () => {
         </div>
       ) : isError ? (
         <div className="mx-auto text-center">
-          <h1 className="text-red-900 text-[200px] font-extrabold">ERROR</h1>
+          <h1 className="text-red-900 text-[200px] font-extrabold">
+            {" "}
+            {t("search.error")}
+          </h1>
           <h3 className="text-red-900 text-[30px] font-extrabold mb-4">
-            Movie not Found
+            {t("search.error_type")}
           </h3>
           <button
             className="text-white border border-white py-2 px-4 rounded-xl hover:bg-red-800 hover:border-red-800"
@@ -74,14 +77,14 @@ const Search = () => {
               navigate("/");
             }}
           >
-            Go home
+            {t("search.go_home")}
           </button>
         </div>
       ) : data?.results?.length === 0 ? (
         <div className="mx-auto text-center">
           <h1 className="text-white text-[200px] font-extrabold">404</h1>
           <h3 className="text-white text-[30px] font-extrabold mb-4">
-            Movie not Found
+            {t("search.error_type")}
           </h3>
           <button
             className="text-white border border-white py-2 px-4 rounded-xl hover:bg-red-800 hover:border-red-800"

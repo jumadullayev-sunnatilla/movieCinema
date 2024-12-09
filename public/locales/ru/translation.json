@@ -1,0 +1,39 @@
+{
+  "id": "en",
+  "movie": "Фильм",
+  "genres": "Жанр",
+  "header": {
+    "afisha": "Афиша",
+    "seans": "Сеансы",
+    "ticket": "Билеты",
+    "search": "Поиск",
+    "sign_in": "Войти"
+  },
+  "swiper": {
+    "look": "Смотреть"
+  },
+  "movie_list": {
+    "now_playing": "Сейчас смотрю",
+    "popular": "Популярный",
+    "top_rated": " Высокий рейтинг",
+    "upcoming": "Предстоящий"
+  },
+  "search": {
+    "title": "Начать поиск фильмов",
+    "title_move": "Введите название фильма в строку поиска выше.",
+    "error": "ОШИБКА",
+    "error_type": "Фильм не найден",
+    "go_home": "главная страница"
+  },
+  "detail": {
+    "detail": "Деталь",
+    "ticket": "Билет",
+    "duration": "Продолжительность",
+    "premiere": "Premiere",
+    "genres": "Жанр",
+    "production": "Производство",
+    "age_rating": "Возрастной рейтинг",
+    "about_movie": "O фильме",
+    "ticket_buy": "Купить билет"
+  }
+}

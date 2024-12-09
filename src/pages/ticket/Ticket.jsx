@@ -3,7 +3,7 @@ import Bilet from "../../component/bilet/Bilet";
 
 const Ticket = () => {
   return (
-    <div>
+    <div className=" mt-28">
       <Bilet />
     </div>
   );

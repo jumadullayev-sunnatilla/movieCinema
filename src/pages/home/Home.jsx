@@ -5,7 +5,7 @@ import MovieList from "../../component/movieList/MovieList";
 
 const Home = () => {
   return (
-    <div className=" container mx-auto">
+    <div className=" container mx-auto  mt-28">
       <MovieList />
     </div>
   );

@@ -12,6 +12,8 @@ import DetailData from "../../component/detailData/DetailData";
 import Bilet from "../../component/bilet/Bilet";
 import DetailImage from "../../component/detailImage/DetailImage";
 
+import { useTranslation } from "react-i18next";
+
 const Detail = () => {
   const navigate = useNavigate();
   const [page, setPage] = useState(true);
@@ -24,9 +26,10 @@ const Detail = () => {
   const handleGoBack = () => {
     navigate(-1);
   };
+  const { t } = useTranslation();
 
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto mt-28">
       <div
         style={{
           backgroundImage: `url(${
@@ -40,10 +43,13 @@ const Detail = () => {
 
           paddingBottom: "20px",
         }}
-        className="w-full h-[640px] rounded-xl p-4 flex flex-col justify-between  "
+        className="w-full h-[640px] rounded-xl p-4 flex flex-col justify-between mt-10 "
       >
         <div className="flex justify-between items-center bg-transparent detailPAge">
-          <button className="py-4 px-5 bg-black opacity-80">
+          <button
+            onClick={handleGoBack}
+            className="py-4 px-5 bg-black opacity-80"
+          >
             <GrPrevious />
           </button>
           <div className="flex gap-3 bg-transparent">
@@ -67,7 +73,7 @@ const Detail = () => {
             className="bg-white rounded-xl text-red-800 px-28 py-4 text-xs font-bold flex items-center gap-2"
           >
             <FaPlay className="bg-transparent" />
-            Смотреть
+            {t("swiper.look")}
           </button>
         </div>
       </div>
