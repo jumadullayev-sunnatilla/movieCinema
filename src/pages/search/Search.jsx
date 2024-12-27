@@ -44,14 +44,15 @@ const Search = () => {
         <input
           ref={searchValue}
           type="search"
-          className="bg-transparent w-full p-1 text-xl border-none"
+          className="bg-transparent w-full p-1 text-xl border-none text-red-900 placeholder:text-red-800"
           defaultValue={search}
+          placeholder={`${t("header.search")}...`}
         />
       </form>
 
       {!search ? (
-        <div className="text-center mt-10">
-          <h2 className="text-white text-5xl font-semibold">
+        <div className="text-center mt-10 h-[300px] justify-center items-center flex flex-col gap-10">
+          <h2 className="text-red-800 font-semibold text-5xl ">
             {t("search.title")}
           </h2>
           <p className="text-gray-400 mt-2">{t("search.title_move")}</p>

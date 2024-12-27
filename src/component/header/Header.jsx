@@ -26,10 +26,10 @@ const Header = () => {
               <span className="text-sm">{t("header.afisha")}</span>
             </li>
           </NavLink>
-          <NavLink to={"/seans"} className={"active:text-red-900"}>
+          <NavLink to={"/ganr"} className={"active:text-red-900"}>
             <li className="px-3 py-1 text-xl active:text-red-900 flex flex-col gap-1 items-center justify-center font-light">
               <MdMovie />
-              <span className="text-sm">{t("header.seans")}</span>
+              <span className="text-sm">{t("header.genres")}</span>
             </li>
           </NavLink>
           <NavLink to={"/ticket"} className={"active:text-red-900"}>

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useGetGenreQuery } from "../../redux/api/genre-api";
-import { useGetMovieDiscoverQuery } from "../../redux/api/movie-api";
-import Movie from "../Movie/Movie";
+import { useGetGenreQuery } from "../../../redux/api/genre-api";
+import { useGetMovieDiscoverQuery } from "../../../redux/api/movie-api";
+import Movie from "../../../component/Movie/Movie";
 
 const Ganr = () => {
   const [selectedGenre, setSelectedGenre] = useState([]);
@@ -11,7 +11,7 @@ const Ganr = () => {
 
   const { data } = useGetMovieDiscoverQuery({
     with_genres: selectedGenre.join(","),
-    without_genres: "",
+    without_genres: "10749,18",
     page: currentPage,
   });
 
@@ -40,7 +40,7 @@ const Ganr = () => {
   ));
 
   return (
-    <div className="bg-black text-white min-h-screen p-5">
+    <div className="bg-black text-white min-h-screen p-5 mt-28">
       <div className="flex gap-5 overflow-auto p-3">{genresList}</div>
       <div className="flex flex-wrap gap-3">
         {<Movie data={data?.results} />}
